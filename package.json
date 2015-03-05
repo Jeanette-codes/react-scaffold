@@ -1,0 +1,28 @@
+{
+  "name": "react-scaffold",
+  "version": "0.0.1",
+  "description": "An npm module to create quick react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fender-guy/react-scaffold.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "scaffold"
+  ],
+  "author": "Jeremy Hitchcock <whatthefuture@gmail.com> (https://github.com/fender-guy)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fender-guy/react-scaffold/issues"
+  },
+  "homepage": "https://github.com/fender-guy/react-scaffold",
+  "dependencies": {
+    "mkdirp": "^0.5.0",
+    "prompt": "^0.2.14"
+  }
+}
