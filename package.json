@@ -1,6 +1,6 @@
 {
   "name": "react-scaffold",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An npm module to create quick react components",
   "main": "index.js",
   "bin": {
