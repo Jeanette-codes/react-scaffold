@@ -1,8 +1,11 @@
 {
   "name": "react-scaffold",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "An npm module to create quick react components",
   "main": "index.js",
+  "bin": {
+    "react-scaffold": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

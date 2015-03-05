@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var directory = __dirname;
 var prompt = require('prompt');
 var fs = require('fs');
