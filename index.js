@@ -18,8 +18,8 @@ var init = function(){
             name : {
                 description: 'What would you like to name your component?',
                 type: 'string',
-                pattern: /^[a-zA-Z_\-]+$/,
-                message: 'Must be only letters and no spaces',
+                pattern: /^[$A-Z_][0-9A-Z_$]*$/i,
+                message: 'Name must start with a letter and have no spaces',
                 default: 'main',
                 required: true
             },
