@@ -37,6 +37,11 @@ var init = function(){
         return 1;
     }
 
+
+    function capitalize(s) {
+        return s[0].toUpperCase() + s.slice(1);
+    },
+
     function write(filename){
         mkdirp(directory + '/style', function (err) {
             if (err) console.error(err)
@@ -49,7 +54,7 @@ var init = function(){
 
         template = template.replace('{{displayName}}',filename);
 
-        fs.writeFile(filename + '.js', template, function (err) {
+        fs.writeFile(capitalize(filename) + '.js', template, function (err) {
             if (err) return console.log(err);
             console.log(filename + ' > ' + filename + '.js');
         });
