@@ -40,7 +40,7 @@ var init = function(){
 
     function capitalize(s) {
         return s[0].toUpperCase() + s.slice(1);
-    },
+    }
 
     function write(filename){
         mkdirp(directory + '/style', function (err) {
