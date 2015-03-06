@@ -52,7 +52,7 @@ var init = function(){
             });
         });
 
-        template = template.replace('{{displayName}}',filename);
+        template = template.replace(/{{displayName}}/g,filename);
 
         fs.writeFile(capitalize(filename) + '.js', template, function (err) {
             if (err) return console.log(err);

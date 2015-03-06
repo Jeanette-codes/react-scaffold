@@ -1,16 +1,17 @@
 var React = require('react');
+var React = require('./styles/{{displayName}}.less');
 
 module.exports = React.createClass({
     displayName : '{{displayName}}',
 
     getInitialState: {
         return {
-            default : 'erase this'
+            example : 'erase this'
         };
     },
 
     propTypes: {
-        default: React.PropTypes.string
+        example: React.PropTypes.string
     },
 
     componentWillMount: function(){
