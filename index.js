@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-var directory = __dirname;
+var directory = process.cwd();
 var prompt = require('prompt');
 var fs = require('fs');
 var read = fs.readFileSync;
 var mkdirp = require('mkdirp');
 
-var template = read('./componentTemplate.js', 'utf8');
+var template = read(__dirname + '/componentTemplate.js', 'utf8');
 var filename; 
 var styleExists = false;
 
