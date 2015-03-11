@@ -1,12 +1,12 @@
 var React = require('react');
-var React = require('./styles/{{displayName}}.less');
+require('./styles/{{displayName}}.less');
 
 module.exports = React.createClass({
     displayName : '{{displayName}}',
 
-    getInitialState: {
+    getInitialState: function(){
         return {
-            example : 'erase this'
+            example: 'erase this'
         };
     },
 

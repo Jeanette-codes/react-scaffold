@@ -46,7 +46,7 @@ var init = function(){
         mkdirp(directory + '/style', function (err) {
             if (err) console.error(err)
             else console.log('writing style directory');
-            fs.writeFile('style/' + filename + '.less', template, function (err) {
+            fs.writeFile('styles/' + filename + '.less', '', function (err) {
                 if (err) return console.log(err);
                 console.log(filename + ' > style/' + filename + '.less');
             });
