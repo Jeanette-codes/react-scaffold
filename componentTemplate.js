@@ -1,12 +1,18 @@
 var React = require('react');
-require('./styles/{{displayName}}.less');
+require('./styles/{{displayName}}.scss');
 
 module.exports = React.createClass({
     displayName : '{{displayName}}',
 
-    getInitialState: function(){
+    getInitialState(){
         return {
-            example: 'erase this'
+            exampleState: 'initial state'
+        };
+    },
+
+    getDefaultProps(){
+        return {
+            exampleProp: 'default prop'
         };
     },
 
@@ -14,22 +20,22 @@ module.exports = React.createClass({
         example: React.PropTypes.string
     },
 
-    componentWillMount: function(){
+    componentWillMount(){
     },
 
-    componentDidMount: function(){
+    componentDidMount(){
     },
 
-    componentWillUpdate: function(){
+    componentWillUpdate(){
     },
 
-    componentDidUpdate: function(){
+    componentDidUpdate(){
     },
 
-    componentWillUnmount: function(){
+    componentWillUnmount(){
     },
 
-    render: function(){
+    render(){
         return (
             <div></div>
         );

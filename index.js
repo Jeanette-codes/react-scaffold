@@ -46,13 +46,13 @@ var init = function(){
         mkdirp(directory + '/style', function (err) {
             if (err) console.error(err)
             else console.log('writing style directory');
-            fs.writeFile('styles/' + filename + '.less', '', function (err) {
+            fs.writeFile('styles/' + capitalize(filename) + '.scss', '', function (err) {
                 if (err) return console.log(err);
-                console.log(filename + ' > style/' + filename + '.less');
+                console.log(filename + ' > style/' + capitalize(filename) + '.scss');
             });
         });
 
-        template = template.replace(/{{displayName}}/g,filename);
+        template = template.replace(/{{displayName}}/g,capitalize(filename));
 
         fs.writeFile(capitalize(filename) + '.js', template, function (err) {
             if (err) return console.log(err);
