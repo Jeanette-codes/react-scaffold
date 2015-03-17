@@ -1,7 +1,7 @@
 var React = require('react');
 require('./styles/{{displayName}}.scss');
 
-module.exports = React.createClass({
+class {{displayName}} extends React.Component {
     displayName : '{{displayName}}',
 
     getInitialState(){
@@ -10,34 +10,32 @@ module.exports = React.createClass({
         };
     },
 
-    getDefaultProps(){
-        return {
-            exampleProp: 'default prop'
-        };
-    },
-
     propTypes: {
         example: React.PropTypes.string
     },
 
-    componentWillMount(){
+    componentWillMount() {
     },
 
-    componentDidMount(){
+    componentDidMount() {
     },
 
-    componentWillUpdate(){
+    componentWillUpdate() {
     },
 
-    componentDidUpdate(){
+    componentDidUpdate() {
     },
 
-    componentWillUnmount(){
+    componentWillUnmount() {
     },
 
-    render(){
+    render() {
         return (
             <div></div>
         );
     }
-});
+}
+
+{{displayName}}.defaultProps = {
+    defaultPropGoesHere: 'default prop'
+};

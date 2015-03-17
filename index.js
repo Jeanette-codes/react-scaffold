@@ -43,18 +43,20 @@ var init = function(){
     }
 
     function write(filename){
-        mkdirp(directory + '/style', function (err) {
+        var filename = capitalize(filename);
+
+        mkdirp(directory + '/styles', function (err) {
             if (err) console.error(err)
             else console.log('writing style directory');
-            fs.writeFile('styles/' + capitalize(filename) + '.scss', '', function (err) {
+            fs.writeFile('styles/' + filename + '.scss', '', function (err) {
                 if (err) return console.log(err);
-                console.log(filename + ' > style/' + capitalize(filename) + '.scss');
+                console.log(filename + ' > style/' + filename + '.scss');
             });
         });
 
         template = template.replace(/{{displayName}}/g,capitalize(filename));
 
-        fs.writeFile(capitalize(filename) + '.js', template, function (err) {
+        fs.writeFile(filename + '.js', template, function (err) {
             if (err) return console.log(err);
             console.log(filename + ' > ' + filename + '.js');
         });
