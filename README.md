@@ -7,10 +7,11 @@ Install with
 npm install -g react-scaffold 
 ```
 
-then navigate to the directory you want a new react component and type
+then navigate to the parent directory of where you want the react component to go (ie: /app/Components)
+then type
 
 ```
 react-scaffold 
 ```
 
-Give your component a name and a new file will be created with a style directory and a sass file with the same name. 
+Give your component a name. A new directory with that name will be created, along with the corresponding JSX and styles/{componentName}.scss
