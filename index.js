@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp');
 
 var template = read(__dirname + '/componentTemplate.js', 'utf8');
 var filename; 
+var componentName;
 var styleExists = false;
 
 var init = function(){
@@ -20,7 +21,7 @@ var init = function(){
                 type: 'string',
                 pattern: /^[$A-Z_][0-9A-Z_$]*$/i,
                 message: 'Name must start with a letter and have no spaces',
-                default: 'main',
+                default: 'Component',
                 required: true
             },
         }
@@ -28,8 +29,8 @@ var init = function(){
 
     prompt.get(schema, function (err, result) {
         if (err) { return onErr(err) }
-        filename = result.name;
-        write(filename);
+        componentName = result.name;
+        write(componentName);
     });
 
     function onErr(err){
@@ -42,23 +43,28 @@ var init = function(){
         return s[0].toUpperCase() + s.slice(1);
     }
 
-    function write(filename){
-        var filename = capitalize(filename);
+    function write(componentName){
+        var componentName = capitalize(componentName);
 
-        mkdirp(directory + '/styles', function (err) {
-            if (err) console.error(err)
-            else console.log('writing style directory');
-            fs.writeFile('styles/' + filename + '.scss', '', function (err) {
-                if (err) return console.log(err);
-                console.log(filename + ' > style/' + filename + '.scss');
-            });
+        // check if component already exists in current directory
+        if (fs.existsSync(componentName)) {
+            console.error('Component: ' + componentName + ' already exists, aborting!');
+            return;
+        }
+
+        mkdirp.sync(componentName + '/styles');
+
+        console.log('writing style directory');
+        fs.writeFile(componentName + '/styles/' + componentName + '.scss', '', function (err) {
+            if (err) return console.log(err);
+            console.log(componentName + ' > style/' + componentName + '.scss');
         });
 
-        template = template.replace(/{{displayName}}/g,capitalize(filename));
+        template = template.replace(/{{displayName}}/g,capitalize(componentName));
 
-        fs.writeFile(filename + '.js', template, function (err) {
+        fs.writeFile(componentName + '/' + componentName + '.js', template, function (err) {
             if (err) return console.log(err);
-            console.log(filename + ' > ' + filename + '.js');
+            console.log(componentName + ' > ' + componentName + '.js');
         });
     }
 }
