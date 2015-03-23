@@ -3,33 +3,33 @@
 var React = require('react');
 require('./styles/{{displayName}}.scss');
 
+/**
+ * @module {{displayName}}
+ */
 class {{displayName}} extends React.Component {
-    displayName : '{{displayName}}',
 
-    getInitialState(){
-        return {
-            exampleState: 'initial state'
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            exampleState : 'initial state'
         };
-    },
-
-    propTypes: {
-        example: React.PropTypes.string
-    },
+    }
 
     componentWillMount() {
-    },
+    }
 
     componentDidMount() {
-    },
+    }
 
     componentWillUpdate() {
-    },
+    }
 
     componentDidUpdate() {
-    },
+    }
 
     componentWillUnmount() {
-    },
+    }
 
     render() {
         return (
@@ -41,3 +41,11 @@ class {{displayName}} extends React.Component {
 {{displayName}}.defaultProps = {
     defaultPropGoesHere: 'default prop'
 };
+
+{{displayName}}.propTypes = {
+    example: React.PropTypes.string
+};
+
+{{displayName}}.displayName = '{{displayName}}';
+
+module.exports = {{displayName}};
